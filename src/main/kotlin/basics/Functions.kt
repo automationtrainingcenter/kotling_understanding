@@ -6,14 +6,14 @@ fun sayHello(name: String) {
     println("Hello $name")
 }
 
-fun add(x: Int, y: Int) : Int {
+fun add(x: Int, y: Int): Int {
     return x + y
 }
 
 fun addExp(x: Int, y: Int) = x + y // function expression
 
 // function default values to parameters
-fun getPersonDetails(name: String, email: String = "info@dummy.com", dob: LocalDate = LocalDate.now()) : String{
+fun getPersonDetails(name: String, email: String = "info@dummy.com", dob: LocalDate = LocalDate.now()): String {
     return "Name: $name, email: $email and dob: $dob"
 }
 

@@ -1,7 +1,5 @@
 package basics
 
-import java.time.temporal.Temporal
-
 // class wiht out any constructor
 class Person {
     fun action() {
@@ -24,9 +22,10 @@ class Student(val name: String, var course: String = "", var fee: Int = 0) {
 }
 
 // class with secondary constructor
-class Vehicle (val name: String){
+class Vehicle(val name: String) {
     var model: String = ""
     var price: Int = 0
+
     constructor(_name: String, _model: String, _price: Int) : this(_name) {
         model = _model
         price = _price
@@ -39,7 +38,7 @@ class Vehicle (val name: String){
 
 // class with init block: is used to develop initialize logic
 class Product {
-    init{
+    init {
         println("Inside init block")
     }
 
@@ -57,7 +56,7 @@ class Item {
             field = value * 10
         }
 
-    constructor(_name:String, _price: Int) {
+    constructor(_name: String, _price: Int) {
         this.name = _name
         this.price = _price
     }
@@ -100,7 +99,7 @@ class Trainer(name: String) : User(name) {
 }
 
 // object keyword which is similar to singleton pattern in java
-object  Authenticator {
+object Authenticator {
 
     fun authenticate(userName: String, password: String) {
         println("User is authenticated, Welcome ${userName.uppercase()}")
@@ -118,7 +117,7 @@ class Asset(var make: String, var model: String) {
         }
     }
 
-    fun getDetails(){
+    fun getDetails() {
         println("Asset Make is $make and model is $model")
     }
 }
@@ -133,7 +132,7 @@ fun main() {
     val s1 = Student("Jack")
     s1.getDetails()
 
-    val s2 = Student(name="Kate", fee=1000) // named arguments
+    val s2 = Student(name = "Kate", fee = 1000) // named arguments
     s2.getDetails()
 
     val car = Vehicle("Honda", "civic", 500000)

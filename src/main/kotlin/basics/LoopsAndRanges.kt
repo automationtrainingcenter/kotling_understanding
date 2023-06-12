@@ -41,7 +41,7 @@ fun exploreBreak() {
     for (i in 1..5) {
         println("i = $i")
         for (j in 1..5) {
-            println("    j = $j" )
+            println("    j = $j")
             if (j == 2) {
                 break
             }
@@ -53,7 +53,7 @@ fun exploreLabel() {
     outer@ for (i in 1..5) {
         println("i = $i")
         inner@ for (j in 1..5) {
-            println("    j = $j" )
+            println("    j = $j")
             if (j == 2) {
                 break@outer
             }

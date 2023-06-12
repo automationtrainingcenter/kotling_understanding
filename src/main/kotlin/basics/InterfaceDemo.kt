@@ -2,8 +2,8 @@ package basics
 
 
 // data class used to create POJO classes or beans equivalent in Java
-data class Course (
-    val id : Int,
+data class Course(
+    val id: Int,
     val name: String,
     val author: String,
     val courseCategory: CourseCategory = CourseCategory.DEVELOPMENT
@@ -21,7 +21,7 @@ enum class CourseCategory {
 interface CourseRepository {
 
     // abstract method
-    fun findByID(id: Int) : Course
+    fun findByID(id: Int): Course
 
     // concrete method
     fun save(course: Course): Int {
@@ -32,8 +32,8 @@ interface CourseRepository {
 }
 
 // another interface
-interface  Repository {
-    fun getAll() : Any
+interface Repository {
+    fun getAll(): Any
 }
 
 // course
@@ -51,7 +51,7 @@ class SQLCourseRepository : CourseRepository, Repository {
 // another class implementing interfaces and overriding the default or concrete method of interfaces
 class NoSQLRepository : CourseRepository, Repository {
     override fun findByID(id: Int): Course {
-       return Course(101, "MongoDB", "Teja")
+        return Course(101, "MongoDB", "Teja")
     }
 
     override fun getAll(): Any {

@@ -21,7 +21,7 @@ fun lists() {
     println("item at index 0 is ${mList[0]}")
 
     // for loop for list
-    for(item in iList) {
+    for (item in iList) {
         print("${item.uppercase()}  ")
     }
     println()
@@ -33,7 +33,8 @@ fun maps() {
     val iMap = mapOf(1 to "React", 2 to "Vue", 3 to "Angular", 4 to "React Native", 5 to "Flutter")
     println("immutable map is $iMap")
 
-    val mMap = mutableMapOf(101 to "MongoDB", 102 to "Postgresql", 103 to "Oracle", 104 to "My SQL", 105 to "MS SQL Server")
+    val mMap =
+        mutableMapOf(101 to "MongoDB", 102 to "Postgresql", 103 to "Oracle", 104 to "My SQL", 105 to "MS SQL Server")
     println("mutable map is $mMap")
 
     // adding a new value to map
@@ -53,7 +54,7 @@ fun maps() {
     println("Items of mutable map are ${mMap.entries}")
 
     // for loop on map
-    for(item in mMap) {
+    for (item in mMap) {
         println(item)
     }
 }
@@ -84,9 +85,9 @@ fun sets() {
 // lambda functions
 fun lambdas() {
     // lambda functions
-    val add = {x: Int  -> x + x}
-    val mul = {x: Int, y: Int -> x * y}
-    val pow = {x: Int, y: Int ->
+    val add = { x: Int -> x + x }
+    val mul = { x: Int, y: Int -> x * y }
+    val pow = { x: Int, y: Int ->
         println("calculating the power of given number $x and $y")
         Math.pow(x.toDouble(), y.toDouble()).toInt()
     }
@@ -97,14 +98,14 @@ fun lambdas() {
 
 
 // higher order functions
-fun highOrderFun(x: Int, y: Int, op: (x: Int, y: Int) -> Int) : Int {
+fun highOrderFun(x: Int, y: Int, op: (x: Int, y: Int) -> Int): Int {
     return op(x, y)
 }
 
 // filter function
 fun exploreFilter(courses: MutableList<Course>) {
     // prints development courses everytime
-    courses.filter { it.category == CourseCategory.DEVELOPEMENT }.forEach{println(it)}
+    courses.filter { it.category == CourseCategory.DEVELOPEMENT }.forEach { println(it) }
 }
 
 fun exploreDynamicFilter(courses: MutableList<Course>, predicate: (Course) -> Boolean) {
@@ -118,7 +119,7 @@ fun exploreMap(courses: MutableList<Course>) {
 }
 
 // flat map function
-fun exploreFlatMap(courses: MutableList<Course>, KAFKA: String) : List<String>{
+fun exploreFlatMap(courses: MutableList<Course>, KAFKA: String): List<String> {
     return courses.flatMap { crs ->
         val courseName = crs.name
         crs.topicsCovered.filter {
@@ -136,11 +137,11 @@ fun main() {
     sets()
     lambdas()
     println(highOrderFun(2, 3) { a: Int, b: Int -> a + b })
-    println( highOrderFun(3, 4) { a, b -> a *b})
+    println(highOrderFun(3, 4) { a, b -> a * b })
     val courses = courseList()
     exploreFilter(courses)
     exploreDynamicFilter(courses) { c: Course -> c.category == CourseCategory.DEVELOPEMENT }
-    val designPredicate = {c: Course -> c.category == CourseCategory.DESIGN}
+    val designPredicate = { c: Course -> c.category == CourseCategory.DESIGN }
     exploreDynamicFilter(courses, designPredicate)
 
     exploreMap(courses)
